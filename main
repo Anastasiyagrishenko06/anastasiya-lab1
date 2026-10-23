@@ -1,0 +1,89 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // === 1. Логика фильтрации проектов ===
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    const noProjectsMsg = document.querySelector('.no-projects-msg');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Убираем активный класс у всех кнопок
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Добавляем активный класс текущей
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+            let visibleCount = 0;
+
+            projectCards.forEach(card => {
+                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                    card.style.display = 'block';
+                    // Небольшая анимация появления
+                    card.style.animation = 'fadeIn 0.5s ease forwards';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Показываем сообщение, если нет карточек
+            if (visibleCount === 0) {
+                noProjectsMsg.style.display = 'block';
+            } else {
+                noProjectsMsg.style.display = 'none';
+            }
+        });
+    });
+
+    // === 2. Логика переключения темы ===
+    const themeToggle = document.querySelector('.theme-toggle');
+    const body = document.body;
+    
+    // Проверяем сохраненную тему в localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        body.classList.add('light-theme');
+        themeToggle.textContent = '☀️';
+    }
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-theme');
+        
+        if (body.classList.contains('light-theme')) {
+            themeToggle.textContent = '☀️';
+            localStorage.setItem('theme', 'light');
+        } else {
+            themeToggle.textContent = '🌙';
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+
+    // === 3. Логика мобильного меню ===
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    const navLinks = document.querySelectorAll('.nav-list a');
+
+    function toggleMenu() {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+        mobileMenuBtn.classList.toggle('active');
+        nav.classList.toggle('active');
+    }
+
+    mobileMenuBtn.addEventListener('click', toggleMenu);
+
+    // Закрытие меню при клике на ссылку
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+
+    // Закрытие меню по клавише Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+});

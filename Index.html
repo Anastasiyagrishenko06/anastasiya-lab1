@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Грищенко Анастасия — Портфолио</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="logo">
+            <!-- Ник изменен на NGRI -->
+            <span class="logo-circle"></span> NGRI
+        </div>
+        <button class="mobile-menu-btn" aria-label="Открыть меню" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="#about">О себе</a></li>
+                <li><a href="#education">Образование</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#contacts" class="btn-outline">Контакты</a></li>
+            </ul>
+        </nav>
+        <button class="theme-toggle" aria-label="Переключить тему">🌙</button>
+    </header>
+
+    <main>
+        <!-- Первый экран (Hero) -->
+        <section class="hero" id="home">
+            <div class="hero-image"></div>
+            <div class="hero-content">
+                <div class="hexagon">
+                    <div class="profile-photo">
+                        <img src="my-photo.jpg" alt="Грищенко Анастасия">
+                    </div>
+                    <h1>Грищенко<br>Анастасия</h1>
+                    <p class="subtitle">Программист в дизайне</p>
+                    <p class="description">Создаю функциональные и эстетичные цифровые продукты. Сочетаю чистый код с современным визуалом.</p>
+                    <a href="#projects" class="btn-primary">Смотреть работы</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- О себе и Образование -->
+        <section class="section about-section" id="about">
+            <div class="container grid-2">
+                <div class="about-text">
+                    <h2 class="section-title"><span class="accent-line"></span>О себе</h2>
+                    <p>Привет! Я начинающий веб-разработчик и дизайнер. Мне нравится превращать сложные задачи в простые и понятные интерфейсы. Изучаю современные технологии фронтенда и активно применяю их в учебных проектах.</p>
+                    <p>В своей работе уделяю внимание не только внешнему виду, но и удобству использования (UX), а также чистоте и доступности кода.</p>
+                </div>
+                <div class="education-box" id="education">
+                    <h2 class="section-title"><span class="accent-line"></span>Образование</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="date">Срок обучения: 5 лет</span>
+                            <h3>СПбГУПДТ</h3>
+                            <p>Санкт-Петербургский государственный университет промышленных технологий и дизайна. Изучение веб-разработки, программирования и основ UI/UX дизайна.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="date">Дополнительное образование</span>
+                            <h3>Графический дизайн</h3>
+                            <p>Изучение композиции, типографики и работы с графическими редакторами.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Навыки (Процесс) -->
+        <section class="section skills-section" id="skills">
+            <div class="container">
+                <h2 class="section-title center"><span class="accent-line"></span>Навыки и инструменты</h2>
+                <div class="skills-process">
+                    <div class="process-step">
+                        <span class="step-number">01</span>
+                        <h3>HTML & CSS</h3>
+                        <p>Семантическая верстка, адаптивность, Flexbox, Grid, анимации.</p>
+                    </div>
+                    <div class="process-step">
+                        <span class="step-number">02</span>
+                        <h3>JavaScript</h3>
+                        <p>DOM, события, работа с API, localStorage, современный синтаксис ES6+.</p>
+                    </div>
+                    <div class="process-step">
+                        <span class="step-number">03</span>
+                        <h3>UI/UX Design</h3>
+                        <p>Figma, прототипирование, работа с цветом и типографикой.</p>
+                    </div>
+                    <div class="process-step">
+                        <span class="step-number">04</span>
+                        <h3>Инструменты</h3>
+                        <p>VS Code, Git, GitHub Pages, базовые знания Photoshop.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Проекты -->
+        <section class="section projects-section" id="projects">
+            <div class="container">
+                <h2 class="section-title center"><span class="accent-line"></span>Мои проекты</h2>
+                
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="web">Веб-разработка</button>
+                    <button class="filter-btn" data-filter="design">Дизайн</button>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Карточка 1 -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-image" style="background-color: #333;">
+                            <span>Project 1</span>
+                        </div>
+                        <div class="project-info">
+                            <h3>Интернет-магазин</h3>
+                            <p class="project-desc">Учебный проект. Верстка главной страницы магазина с фильтрацией и корзиной на JS.</p>
+                            <span class="project-tag">Веб-разработка</span>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 2 -->
+                    <div class="project-card" data-category="design">
+                        <div class="project-image" style="background-color: #444;">
+                            <span>Project 2</span>
+                        </div>
+                        <div class="project-info">
+                            <h3>Концепт мобильного приложения</h3>
+                            <p class="project-desc">Учебный проект. Создание UI-кита и прототипа приложения для фитнеса в Figma.</p>
+                            <span class="project-tag">Дизайн</span>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 3 -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-image" style="background-color: #555;">
+                            <span>Project 3</span>
+                        </div>
+                        <div class="project-info">
+                            <h3>Лендинг для студии</h3>
+                            <p class="project-desc">Учебный проект. Адаптивная страница с анимациями и формой обратной связи.</p>
+                            <span class="project-tag">Веб-разработка</span>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 4 -->
+                    <div class="project-card" data-category="design">
+                        <div class="project-image" style="background-color: #222;">
+                            <span>Project 4</span>
+                        </div>
+                        <div class="project-info">
+                            <h3>Айдентика бренда</h3>
+                            <p class="project-desc">Учебный проект. Разработка логотипа, цветовой палитры и брендбука для кофейни.</p>
+                            <span class="project-tag">Дизайн</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="no-projects-msg" style="display: none;">В этой категории пока нет проектов.</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer" id="contacts">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Связаться со мной</h3>
+                <p>Открыта к предложениям о стажировке и интересным проектам.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Контакт</h4>
+                <p>Email: <a href="mailto:NastyaGrishenKooo.student@example.com">NastyaGrishenKooo.student@example.com</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Информация</h4>
+                <p>Функции JS: фильтр проектов, переключение темы (с сохранением), мобильное меню.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <!-- Ник NGRI в подвале, упоминание DeepSeek убрано -->
+            <p>&copy; 2024 NGRI (Грищенко Анастасия). Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
